@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
-        <!-- Contenedor para el billete y cantidad total -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,39 +39,118 @@
 
         </LinearLayout>
 
-        <!-- Botón para agregar monedas -->
-        <Button
-            android:id="@+id/addCoinButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/agregar_moneda"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Contenedor para las monedas -->
         <LinearLayout
-            android:id="@+id/coinsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/billImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/billete_desc"
+                android:src="@drawable/tu_imagen_moneda" />
+
+            <EditText
+                android:id="@+id/denominationInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:hint="Ingrese denominación de moneda"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                android:padding="8dp"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/addDenominationButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:text="Agregar" />
+
+        </LinearLayout>
+
+        <!-- Campo para ingresar la denominación -->
+
+
+
+        <!-- Botón para agregar denominación -->
+
+        <!-- Texto de cantidad de denominaciones -->
+
+
+
+        <TextView
+            android:id="@+id/denominationCountLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:text="Cantidad de denominaciones:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- TextView para mostrar la cantidad -->
+        <TextView
+            android:id="@+id/denominationCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="16dp" />
+
+        <!-- TextView para mostrar los valores ingresados -->
+        <TextView
+            android:id="@+id/denominationValuesLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Denominaciones ingresadas:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/denominationValues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin valores"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="16dp" />
 
         <!-- Botón para calcular -->
         <Button
             android:id="@+id/calculateButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calcular"
-            android:layout_marginTop="16dp"
+            android:text="Calcular"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp" />
 
-        <!-- Área de resultados -->
+        <!-- Texto para mostrar el resultado -->
         <TextView
-            android:id="@+id/resultsTextView"
+            android:id="@+id/resultLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/resultados_placeholder"
+            android:text="El resultado es:"
             android:textSize="16sp"
             android:padding="8dp"
-            android:background="#EFEFEF" />
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/resultValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin calcular"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0" />
 
     </LinearLayout>
 </ScrollView>
