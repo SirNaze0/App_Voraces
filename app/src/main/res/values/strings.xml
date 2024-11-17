@@ -5,4 +5,5 @@
     <string name="agregar_moneda">Agregar Moneda</string>
     <string name="calcular">Calcular</string>
     <string name="resultados_placeholder">Resultados aparecerán aquí</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
