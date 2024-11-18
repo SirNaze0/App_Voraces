@@ -1,18 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MochilaFragment">
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mochila Fraccionaria"
-        android:textSize="26dp"
-        android:layout_gravity="center"
-        />
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/billImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/mochila_img"
+                android:contentDescription="@string/mochila_desc" />
+
+            <EditText
+                android:id="@+id/capacidadEntrada"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:hint="@string/peso_total_hint"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp" /> <!-- Tamaño mínimo para el área táctil -->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="1dp">
+
+            <!-- Imagen a la izquierda -->
+            <ImageView
+                android:id="@+id/coinImage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/mochila_desc"
+                android:src="@drawable/objeto_img"
+                android:layout_gravity="start"/>
+
+            <!-- LinearLayout para los EditText centrado -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <EditText
+                    android:id="@+id/pesoObjetoEntrada"
+                    android:layout_width="209dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Peso del objeto(en kg)"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/valorObjetoEntrada"
+                    android:layout_width="209dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:hint="@string/valorObjetoEntradaHint"
+                    android:inputType="numberDecimal"
+                    android:minHeight="48dp"
+                    android:padding="8dp"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Botón a la derecha -->
+            <Button
+                android:id="@+id/agregarObjetoBoton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agregar_objeto"
+                android:layout_gravity="end"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- TextView para mostrar la cantidad -->
+            <TextView
+                android:id="@+id/cantidadObjetosEtiqueta"
+                android:layout_width="274dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:text="Cantidad de objetos:"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/cantidadObjetosVista"
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:background="#F0F0F0"
+                android:padding="8dp"
+                android:text="0"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <!-- TextView para mostrar los valores ingresados -->
+
+        <TextView
+            android:id="@+id/listaObjetosEtiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:padding="8dp"
+            android:text="Objetos:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/listaObjetosVista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin valores"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0"
+            android:layout_marginBottom="16dp" />
+        <Button
+            android:id="@+id/calcularBoton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Calcular" />
+
+        <TextView
+            android:id="@+id/resultadoEtiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El resultado es:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/resultadoVista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin calcular"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0" />
+
+    </LinearLayout>
+</ScrollView>
