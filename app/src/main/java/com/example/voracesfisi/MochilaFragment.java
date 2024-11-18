@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Locale;
 
 /**
@@ -90,32 +91,52 @@ public class MochilaFragment extends Fragment {
     private void clickCalcularBoton() {
         int capacidad = Integer.parseInt(capacidadEntrada.getText().toString());
         capacidadEntrada.setText("");
-        double maxValor = resolverMochilaFraccionaria(objetosLista, capacidad);
-        String resultadoVistaString="Valor maximo obtenido en (S/.): \""+ maxValor;
-        resultadoVista.setText(resultadoVistaString);
+        List<ResultadoObjeto> resultados = resolverMochilaFraccionaria(objetosLista, capacidad);
+
+        // Construir el resultado como una cadena
+        StringBuilder resultadoVistaString = new StringBuilder("Valor máximo obtenido (S/.): " + resultados.stream()
+                .mapToDouble(res -> res.objeto.valorPorPeso * res.objeto.peso * res.fraccion) // Calcula el valor fraccionado
+                .sum());
+
+        resultadoVistaString.append("\nFracciones de objetos tomados:\n");
+        for (ResultadoObjeto res : resultados) {
+            resultadoVistaString.append(res.toString()).append("\n");
+        }
+
+        // Mostrar en la vista
+        resultadoVista.setText(resultadoVistaString.toString());
     }
-    public static double resolverMochilaFraccionaria(ArrayList<Objeto> objetosLista, int capacidad) {
+    public static List<ResultadoObjeto> resolverMochilaFraccionaria(ArrayList<Objeto> objetosLista, int capacidad) {
         // Ordenar los objetos por valor/peso en orden descendente
         Collections.sort(objetosLista);
         double valorTotal = 0;
+        List<ResultadoObjeto> resultados = new ArrayList<>();
+
         for (Objeto obj : objetosLista) {
             if (capacidad == 0) break; // Detener si la mochila está llena
+
+            double fraccion = 0;  // Variable para almacenar la fracción tomada
+
             if (capacidad >= obj.peso) { // Tomar el objeto completo si cabe
                 capacidad -= obj.peso;
                 valorTotal += obj.valor;
-                System.out.printf("Tomado completo: %s%n", obj); // Usando el toString() de la clase Objeto
+                fraccion = 1.0; // Fracción completa
             } else { // Tomar una fracción del objeto si no cabe completo
-                double fraccion = (double) capacidad / obj.peso;
-                if (fraccion > 0) { // Solo considerar fracciones mayores a 0
-                    double valorFraccionado = obj.valorPorPeso * capacidad;
-                    valorTotal += valorFraccionado;
-                    System.out.printf("Tomado fracción: %.2f%% del objeto con %s%n", fraccion * 100, obj); // Usando toString()
-                }
+                fraccion = (double) capacidad / obj.peso;
+                valorTotal += obj.valorPorPeso * capacidad;
                 capacidad = 0; // Mochila llena
             }
+
+            // Añadir al resultado
+            resultados.add(new ResultadoObjeto(obj, fraccion));
         }
-        return valorTotal;
+
+        // Mostrar el valor total
+        System.out.printf("Valor total: %.2f%n", valorTotal);
+
+        return resultados;
     }
+
     private void clickAgregarObjetoBoton() {
         String pesoObjetoEntradaString = pesoObjetoEntrada.getText().toString();
         String valorObjetoEntradaString =valorObjetoEntrada.getText().toString();
@@ -184,6 +205,20 @@ public class MochilaFragment extends Fragment {
         public String toString() {
             // Formato (peso, valor)
             return "(" + peso + ", " + valor + ")";
+        }
+    }
+    public static class ResultadoObjeto {
+        public Objeto objeto;
+        public double fraccion;
+
+        public ResultadoObjeto(Objeto objeto, double fraccion) {
+            this.objeto = objeto;
+            this.fraccion = fraccion;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("Objeto: %s, Fracción tomada: %.2f%%", objeto, fraccion * 100);
         }
     }
 }

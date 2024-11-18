@@ -20,7 +20,7 @@
             android:layout_marginBottom="16dp">
 
             <ImageView
-                android:id="@+id/billImage"
+                android:id="@+id/mochilaImagen"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:src="@drawable/mochila_img"
