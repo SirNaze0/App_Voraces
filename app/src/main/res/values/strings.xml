@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CambioDeMonedaApp</string>
+    <string name="app_name">FisiVoraz</string>
     <string name="billete_desc">Imagen de un billete</string>
     <string name="mochila_desc">Imagen de una mochila</string>
     <string name="ciudades_desc">Imagen de ciudades</string>
