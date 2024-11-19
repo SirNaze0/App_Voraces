@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ViajeroFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/ciudadesImagen"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ciudades_img"
+                android:contentDescription="@string/ciudades_desc" />
+
+            <EditText
+                android:id="@+id/cantidadCiudadesEntrada"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:hint="@string/cantidad_ciudades"
+                android:padding="8dp"
+                android:layout_marginStart="8dp"
+                android:minHeight="48dp" /> <!-- Tamaño mínimo para el área táctil -->
+            <!-- Botón a la derecha -->
+            <Button
+                android:id="@+id/cantidadCiudadesBoton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cantidadCiudadesSet"
+                android:layout_gravity="end"
+                android:layout_marginStart="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="1dp">
+            <TableLayout
+                android:id="@+id/tablaCiudades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:stretchColumns="1"
+                android:padding="8dp"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/calcularBoton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Calcular" />
+
+        <TextView
+            android:id="@+id/resultadoEtiqueta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="El resultado es:"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/resultadoVista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sin calcular"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:background="#F0F0F0" />
+
+    </LinearLayout>
+
+</ScrollView>

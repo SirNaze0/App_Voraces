@@ -2,11 +2,7 @@ package com.example.voracesfisi;
 
 import android.os.Bundle;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -26,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.money) {
                 replaceFragment(new MoneyFragment());
             } else if (itemId == R.id.person) {
-                replaceFragment(new ProfileFragment());
+                replaceFragment(new ViajeroFragment());
             } else if (itemId == R.id.mochila) {
                 replaceFragment(new MochilaFragment());
             } else {

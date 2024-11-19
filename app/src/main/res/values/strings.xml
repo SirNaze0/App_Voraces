@@ -1,9 +1,18 @@
 <resources>
     <string name="app_name">CambioDeMonedaApp</string>
     <string name="billete_desc">Imagen de un billete</string>
+    <string name="mochila_desc">Imagen de una mochila</string>
+    <string name="ciudades_desc">Imagen de ciudades</string>
     <string name="cantidad_total_hint">Cantidad total</string>
+    <string name="peso_total_hint">Capacidad</string>
+    <string name="cantidad_ciudades">Cantidad de ciudades</string>
     <string name="agregar_moneda">Agregar Moneda</string>
     <string name="calcular">Calcular</string>
     <string name="resultados_placeholder">Resultados aparecerán aquí</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pesoEntradaHint">Peso del objeto</string>
+    <string name="valorObjetoEntradaHint">Valor del objeto(en S/.)</string>
+    <string name="cantidadCiudadesSet">Establecer</string>
+    <string name="agregar_objeto">Agregar</string>
+
 </resources>

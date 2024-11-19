@@ -12,14 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VoracesFISI"
         tools:targetApi="31">
+        <!-- Pantalla de carga -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:launchMode="singleTask"
+            android:exported="true"> <!-- Agregar android:exported aquí -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <!-- Actividad principal -->
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity"
+            android:exported="true"> <!-- Agregar android:exported aquí también si tiene un intent-filter -->
         </activity>
     </application>
 
