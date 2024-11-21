@@ -11,7 +11,7 @@
     <string name="resultados_placeholder">Resultados aparecerán aquí</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pesoEntradaHint">Peso del objeto</string>
-    <string name="valorObjetoEntradaHint">Valor del objeto(en S/.)</string>
+    <string name="valorObjetoEntradaHint">Valor(S/.)</string>
     <string name="cantidadCiudadesSet">Establecer</string>
     <string name="agregar_objeto">Agregar</string>
 
