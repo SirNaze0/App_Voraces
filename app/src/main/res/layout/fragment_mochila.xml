@@ -42,33 +42,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:padding="1dp">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
-            <!-- Imagen a la izquierda -->
-            <ImageView
-                android:id="@+id/coinImage"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:contentDescription="@string/mochila_desc"
-                android:src="@drawable/objeto_img"
-                android:layout_gravity="start"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
 
-            <!-- LinearLayout para los EditText centrado -->
+                <ImageView
+                    android:id="@+id/coinImage"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/mochila_desc"
+                    android:src="@drawable/objeto_img" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Objeto"
+                    android:textSize="14sp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical"
-                android:layout_weight="1"
-                android:gravity="center">
+                android:padding="10dp"
+                android:layout_weight="1">
 
                 <EditText
                     android:id="@+id/pesoObjetoEntrada"
-                    android:layout_width="209dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:hint="Peso del objeto(en kg)"
+                    android:hint="Peso(kg)"
                     android:inputType="numberDecimal"
                     android:minHeight="48dp"
                     android:padding="8dp"
@@ -76,7 +90,7 @@
 
                 <EditText
                     android:id="@+id/valorObjetoEntrada"
-                    android:layout_width="209dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:hint="@string/valorObjetoEntradaHint"
@@ -87,16 +101,16 @@
 
             </LinearLayout>
 
-            <!-- Botón a la derecha -->
             <Button
                 android:id="@+id/agregarObjetoBoton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/agregar_objeto"
-                android:layout_gravity="end"
-                android:layout_marginStart="16dp" />
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:text="@string/agregar_objeto" />
 
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -180,6 +181,7 @@ public class ViajeroFragment extends Fragment {
                 }
                 else {
                     celda.setEnabled(true); // Habilitar celdas editables
+                    celda.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL); // Solo números decimales
                 }
 
                 // Establecer el tamaño de la celda y distribuir proporcionalmente
@@ -193,4 +195,5 @@ public class ViajeroFragment extends Fragment {
             tablaCiudades.addView(fila);
         }
     }
+
 }

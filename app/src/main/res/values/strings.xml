@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CambioDeMonedaApp</string>
+    <string name="app_name">FisiVoraz</string>
     <string name="billete_desc">Imagen de un billete</string>
     <string name="mochila_desc">Imagen de una mochila</string>
     <string name="ciudades_desc">Imagen de ciudades</string>
@@ -11,7 +11,7 @@
     <string name="resultados_placeholder">Resultados aparecerán aquí</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pesoEntradaHint">Peso del objeto</string>
-    <string name="valorObjetoEntradaHint">Valor del objeto(en S/.)</string>
+    <string name="valorObjetoEntradaHint">Valor(S/.)</string>
     <string name="cantidadCiudadesSet">Establecer</string>
     <string name="agregar_objeto">Agregar</string>
 
